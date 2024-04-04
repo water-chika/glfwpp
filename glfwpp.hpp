@@ -1,6 +1,7 @@
 #include <vulkan/vulkan.h>
 #include <GLFW/glfw3.h>
 #include <cassert>
+#include <vector>
 
 namespace glfwpp {
 	bool init();
@@ -28,4 +29,8 @@ namespace glfwpp {
 	private:
 		GLFWwindow* m_window;
 	};
+
+	inline const char** get_required_instance_extensions(uint32_t* count) {
+		return glfwGetRequiredInstanceExtensions(count);
+	}
 }
